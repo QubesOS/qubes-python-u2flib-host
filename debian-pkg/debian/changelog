@@ -1,0 +1,5 @@
+python-u2flib-host (3.0.3-1) unstable; urgency=medium
+
+  * New packaging
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Mon, 10 Sep 2018 14:51:24 +0200

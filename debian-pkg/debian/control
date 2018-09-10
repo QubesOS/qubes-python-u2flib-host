@@ -1,0 +1,25 @@
+Source: python-u2flib-host
+Section: python
+Priority: optional
+Maintainer: Wojtek Porczyk <woju@invisiblethingslab.com>
+Build-Depends:
+ python3-cryptography (>= 1),
+ python3-hid,
+ python3-requests,
+ python3-setuptools, python3-all, dh-python, debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/Yubico/python-u2flib-host
+Vcs-Git: https://github.com/Yubico/python-u2flib-host
+Vcs-Browser: https://github.com/Yubico/python-u2flib-host
+
+Package: python3-u2flib-host
+Architecture: all
+Depends:
+ python3-cryptography (>= 1),
+ python3-requests,
+ python3-hid,
+ ${python3:Depends},
+ ${misc:Depends}
+Description: Python implementation of u2flib-host library
+ Pure Python implementation of U2F library for host, i.e. for communication
+ between client and token.

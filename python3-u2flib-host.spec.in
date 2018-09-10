@@ -1,0 +1,60 @@
+# Created by pyp2rpm-3.3.2
+%global pypi_name python-u2flib-host
+%global srcname u2flib-host
+
+Name:           python-%{srcname}
+Version:        @VERSION@
+Release:        1%{?dist}
+Summary:        Python based U2F host library
+
+License:        None
+URL:            https://github.com/Yubico/python-u2flib-host
+Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+BuildArch:      noarch
+ 
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python%{python3_pkgversion}-cryptography >= 1.0
+BuildRequires:  python%{python3_pkgversion}-hidapi >= 0.7.99
+BuildRequires:  python%{python3_pkgversion}-requests
+BuildRequires:  python%{python3_pkgversion}-setuptools
+
+%description
+Pure Python implementation of U2F library for host, i.e. for communication
+between client and token.
+
+
+%package -n     python%{python3_pkgversion}-%{srcname}
+Summary:        %{summary}
+%{?python_provide:%python_provide python%{python3_pkgversion}-%{srcname}}
+ 
+Requires:       python%{python3_pkgversion}-cryptography >= 1.0
+Requires:       python%{python3_pkgversion}-hidapi >= 0.7.99
+Requires:       python%{python3_pkgversion}-requests
+Requires:       python%{python3_pkgversion}-setuptools
+%description -n python%{python3_pkgversion}-%{srcname}
+Pure Python implementation of U2F library for host, i.e. for communication
+between client and token.
+
+%prep
+%autosetup -n %{pypi_name}-%{version}
+# Remove bundled egg-info
+rm -rf %{pypi_name}.egg-info
+
+%build
+%py3_build
+
+%install
+%py3_install
+
+%check
+%{__python3} setup.py test
+
+%files -n python%{python3_pkgversion}-%{srcname}
+%{_bindir}/u2f-authenticate
+%{_bindir}/u2f-register
+%{python3_sitelib}/u2flib_host
+%{python3_sitelib}/python_u2flib_host-%{version}-py?.?.egg-info
+
+%changelog
+* Mon Sep 10 2018 Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com> - 3.0.3-1
+- Initial package.

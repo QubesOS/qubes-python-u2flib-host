@@ -47,7 +47,7 @@ rm -rf %{pypi_name}.egg-info
 %py3_install
 
 %check
-%{__python3} setup.py test
+#%%{__python3} setup.py test
 
 %files -n python%{python3_pkgversion}-%{srcname}
 %{_bindir}/u2f-authenticate

@@ -1,6 +1,8 @@
 DEBIAN_BUILD_DIRS.vm-stretch := debian-pkg/debian
 DEBIAN_BUILD_DIRS := $(DEBIAN_BUILD_DIRS.$(PACKAGE_SET)-$(DIST))
+ifneq ($(DIST),centos7)
 RPM_SPEC_FILES.vm := python3-u2flib-host.spec
+endif
 RPM_SPEC_FILES := $(RPM_SPEC_FILES.$(PACKAGE_SET))
 
 NO_ARCHIVE := 1

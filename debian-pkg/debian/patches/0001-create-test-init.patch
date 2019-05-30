@@ -1,0 +1,16 @@
+Subject: [PATH] Create empty test/__init__.py
+
+---
+ test/__init__.py | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test/__init__.py
+
+diff --git a/test/__init__.py b/test/__init__.py
+new file mode 100644
+index 0000000..e69de29
+--- /dev/null
++++ b/test/__init__.py
+@@ -0,0 +1 @@
++# empty file
+-- 
+2.20.1

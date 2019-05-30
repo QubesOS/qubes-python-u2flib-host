@@ -1,3 +1,22 @@
+python-u2flib-host (3.0.3-3) unstable; urgency=medium
+
+  [ Marek Marczykowski-Górecki ]
+  * rpm: disable unit tests, as those require X server running
+  * version 3.0.3-2
+
+  [ Frédéric Pierret (fepitre) ]
+  * Don't build for CentOS 7 as we don't currently build app-u2f for
+    CentOS
+
+  [ Marek Marczykowski-Górecki ]
+  * Build for dom0 too
+  * debian: enable build for buster
+  * travis: switch to xenial, update distributions
+  * debian: fix test run on buster
+  * Add configurable package release
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Thu, 30 May 2019 18:46:18 +0200
+
 python-u2flib-host (3.0.3-1) unstable; urgency=medium
 
   * New packaging

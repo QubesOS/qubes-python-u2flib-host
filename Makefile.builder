@@ -1,7 +1,7 @@
 DEBIAN_BUILD_DIRS.vm-stretch := debian-pkg/debian
 DEBIAN_BUILD_DIRS.vm-buster := debian-pkg/debian
 DEBIAN_BUILD_DIRS := $(DEBIAN_BUILD_DIRS.$(PACKAGE_SET)-$(DIST))
-ifneq ($(DIST),centos7)
+ifneq ($(DISTRIBUTION),centos)
 RPM_SPEC_FILES := python3-u2flib-host.spec
 endif
 

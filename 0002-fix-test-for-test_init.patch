@@ -1,0 +1,49 @@
+From 59f98986a7ca52c2a9823db82c08bf73082c6268 Mon Sep 17 00:00:00 2001
+From: Venkat Venkataraju <venkat.venkataraju@gmail.com>
+Date: Fri, 17 Aug 2018 15:26:38 -0700
+Subject: [PATCH 2/8] fix test for test_init
+
+---
+ test/test_hid_transport.py   | 1 +
+ u2flib_host/hid_transport.py | 7 ++++++-
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/test/test_hid_transport.py b/test/test_hid_transport.py
+index 26bc715..b31aeff 100644
+--- a/test/test_hid_transport.py
++++ b/test/test_hid_transport.py
+@@ -15,6 +15,7 @@ class TestHIDDevice(object):
+         self.cmd = payload[5] ^ hid_transport.TYPE_INIT
+         self.size = (payload[6] << 8) + payload[7]
+         self.data = list(map(int2byte, payload[8:(8 + self.size)]))
++        return len(payload)
+ 
+     def read(self, size):
+         self.response += [0] * (hid_transport.HID_RPT_SIZE - len(self.response) + 1)
+diff --git a/u2flib_host/hid_transport.py b/u2flib_host/hid_transport.py
+index ec97d06..e16eb20 100644
+--- a/u2flib_host/hid_transport.py
++++ b/u2flib_host/hid_transport.py
+@@ -159,13 +159,18 @@ class HIDDevice(U2FDevice):
+     def lock(self, lock_time=10):
+         self.call(CMD_LOCK, lock_time)
+ 
+-    def _write_to_device(self, to_send):
++    def _write_to_device(self, to_send, timeout=2.0):
+         expected = len(to_send)
+         actual = 0
++        stop_at = time() + timeout
+         while actual != expected:
++            if (time() > stop_at):
++                raise exc.DeviceError("Unable to send data to the device")
++
+             actual = self.handle.write(to_send)
+             sleep(0.025)
+ 
++
+     def _send_req(self, cid, cmd, data):
+         size = len(data)
+         bc_l = int2byte(size & 0xff)
+-- 
+2.21.3
+

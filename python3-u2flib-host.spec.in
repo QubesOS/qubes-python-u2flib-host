@@ -11,6 +11,15 @@ License:        None
 URL:            https://github.com/Yubico/python-u2flib-host
 Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
+
+Patch01: 0001-handing-write-failures-better.patch
+Patch02: 0002-fix-test-for-test_init.patch
+Patch03: 0003-add-Google-Titan-Feitian-devices.patch
+Patch04: 0004-Add-Feitian-Technologies-Inc.-ePass-FIDO-to-devices.patch
+Patch05: 0005-Add-Thetis-and-JaCarta-devices-close-36-close-39.patch
+Patch06: 0006-Added-OnlyKey-device.patch
+Patch07: 0007-Add-Trezor-VID-PID-close-42.patch
+Patch08: 0008-Add-reference-to-python-fido2-in-README.patch
  
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  python%{python3_pkgversion}-cryptography >= 1.0
@@ -36,7 +45,7 @@ Pure Python implementation of U2F library for host, i.e. for communication
 between client and token.
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
+%autosetup -n %{pypi_name}-%{version} -p1
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 

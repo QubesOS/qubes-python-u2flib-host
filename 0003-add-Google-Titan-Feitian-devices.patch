@@ -1,0 +1,25 @@
+From bff89a63d567d6df8c941ad588b3b2cb92fff328 Mon Sep 17 00:00:00 2001
+From: Devrandom <miron@basezero.com>
+Date: Sun, 20 Oct 2019 04:17:16 +0200
+Subject: [PATCH 3/8] add Google Titan (Feitian) devices
+
+---
+ u2flib_host/hid_transport.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/u2flib_host/hid_transport.py b/u2flib_host/hid_transport.py
+index e16eb20..20562b4 100644
+--- a/u2flib_host/hid_transport.py
++++ b/u2flib_host/hid_transport.py
+@@ -50,6 +50,8 @@ DEVICES = [
+     (0x1050, 0x0406),  # YubiKey 4 U2F+CCID
+     (0x1050, 0x0407),  # YubiKey 4 OTP+U2F+CCID
+     (0x2581, 0xf1d0),  # Plug-Up U2F Security Key
++    (0x096e, 0x0858),  # FT U2F
++    (0x096e, 0x085b),  # FS ePass FIDO
+ ]
+ HID_RPT_SIZE = 64
+ 
+-- 
+2.21.3
+

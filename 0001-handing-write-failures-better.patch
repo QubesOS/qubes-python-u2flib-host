@@ -1,0 +1,46 @@
+From fbafa8fc169f64b4a55f1d110e12420ea6436840 Mon Sep 17 00:00:00 2001
+From: Venkat Venkataraju <venkat.venkataraju@gmail.com>
+Date: Thu, 16 Aug 2018 11:36:45 -0700
+Subject: [PATCH 1/8] handing write failures better
+
+---
+ u2flib_host/hid_transport.py | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/u2flib_host/hid_transport.py b/u2flib_host/hid_transport.py
+index 2031405..ec97d06 100644
+--- a/u2flib_host/hid_transport.py
++++ b/u2flib_host/hid_transport.py
+@@ -159,6 +159,13 @@ class HIDDevice(U2FDevice):
+     def lock(self, lock_time=10):
+         self.call(CMD_LOCK, lock_time)
+ 
++    def _write_to_device(self, to_send):
++        expected = len(to_send)
++        actual = 0
++        while actual != expected:
++            actual = self.handle.write(to_send)
++            sleep(0.025)
++
+     def _send_req(self, cid, cmd, data):
+         size = len(data)
+         bc_l = int2byte(size & 0xff)
+@@ -166,13 +173,13 @@ class HIDDevice(U2FDevice):
+         payload = cid + int2byte(TYPE_INIT | cmd) + bc_h + bc_l + \
+             data[:HID_RPT_SIZE - 7]
+         payload += b'\0' * (HID_RPT_SIZE - len(payload))
+-        self.handle.write([0] + [byte2int(c) for c in payload])
++        self._write_to_device([0] + [byte2int(c) for c in payload])
+         data = data[HID_RPT_SIZE - 7:]
+         seq = 0
+         while len(data) > 0:
+             payload = cid + int2byte(0x7f & seq) + data[:HID_RPT_SIZE - 5]
+             payload += b'\0' * (HID_RPT_SIZE - len(payload))
+-            self.handle.write([0] + [byte2int(c) for c in payload])
++            self._write_to_device([0] + [byte2int(c) for c in payload])
+             data = data[HID_RPT_SIZE - 5:]
+             seq += 1
+ 
+-- 
+2.21.3
+

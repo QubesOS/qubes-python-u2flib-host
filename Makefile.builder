@@ -17,6 +17,8 @@ source-debian-copy-in: SRC_FILE  = $(ORIG_SRC)/python-u2flib-host-$(VERSION).tar
 source-debian-copy-in:
 	cp -p $(SRC_FILE) $(ORIG_FILE)
 	tar xzf $(SRC_FILE) -C $(CHROOT_DIR)/$(DIST_SRC)/debian-pkg --strip-components=1
+	cp $(ORIG_SRC)/00*.patch $(CHROOT_DIR)/$(DIST_SRC)/debian-pkg/debian/patches/
+	cat $(ORIG_SRC)/debian-series.conf >> $(CHROOT_DIR)/$(DIST_SRC)/debian-pkg/debian/patches/series
 
 
 

@@ -20,7 +20,8 @@ Patch05: 0005-Add-Thetis-and-JaCarta-devices-close-36-close-39.patch
 Patch06: 0006-Added-OnlyKey-device.patch
 Patch07: 0007-Add-Trezor-VID-PID-close-42.patch
 Patch08: 0008-Add-reference-to-python-fido2-in-README.patch
- 
+Patch09: 0009-Add-Nitrokey-devices.patch
+
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  python%{python3_pkgversion}-cryptography >= 1.0
 BuildRequires:  python%{python3_pkgversion}-hidapi >= 0.7.99

@@ -1,0 +1,30 @@
+From 48d0bdc11dd7db2043b7166d6e967cc9a932a8b0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marek=20Marczykowski-G=C3=B3recki?=
+ <marmarek@invisiblethingslab.com>
+Date: Thu, 11 Jun 2020 05:36:28 +0200
+Subject: [PATCH] Add Nitrokey devices
+
+---
+ u2flib_host/hid_transport.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/u2flib_host/hid_transport.py b/u2flib_host/hid_transport.py
+index f7f71ca..88a33e0 100644
+--- a/u2flib_host/hid_transport.py
++++ b/u2flib_host/hid_transport.py
+@@ -57,6 +57,12 @@ DEVICES = [
+     (0x1ea8, 0xf025),  # Thetis U2F
+     (0x1d50, 0x60fc),  # OnlyKey U2F
+     (0x1209, 0x53c1),  # Trezor U2F/FIDO2
++    (0x2581, 0xf1d0),  # Nitrokey U2F
++    (0x20a0, 0x4287),  # Nitrokey FIDO U2F
++    (0x20a0, 0x42b1),  # Nitrokey FIDO2
++    (0x20a0, 0x42b2),  # Nitrokey FIDO2 NFC (future model)
++    (0x20a0, 0x42b3),  # Safetech SafeKey
++
+ ]
+ HID_RPT_SIZE = 64
+ 
+-- 
+2.21.3
+

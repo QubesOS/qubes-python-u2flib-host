@@ -1,3 +1,15 @@
+python-u2flib-host (3.0.3-4) wheezy; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * Currently drop build for CentOS
+  * travis: switch to bionic
+
+  [ Marek Marczykowski-Górecki ]
+  * Add patches from upstream repository master branch
+  * Add Nitrokey devices to the whitelist
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Thu, 11 Jun 2020 05:42:16 +0200
+
 python-u2flib-host (3.0.3-3) unstable; urgency=medium
 
   [ Marek Marczykowski-Górecki ]

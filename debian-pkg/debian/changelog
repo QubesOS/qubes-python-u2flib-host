@@ -1,3 +1,9 @@
+python-u2flib-host (3.0.3-5) wheezy; urgency=medium
+
+  * Fix debian build
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Thu, 11 Jun 2020 06:30:24 +0200
+
 python-u2flib-host (3.0.3-4) wheezy; urgency=medium
 
   [ Frédéric Pierret (fepitre) ]

@@ -1,3 +1,10 @@
+python-u2flib-host (3.0.3-6) unstable; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * Update travis
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Sat, 22 Aug 2020 19:26:11 +0200
+
 python-u2flib-host (3.0.3-5) wheezy; urgency=medium
 
   * Fix debian build

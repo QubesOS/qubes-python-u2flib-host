@@ -1,0 +1,23 @@
+Date: Fri, 6 Nov 2020 10:27:25 +0100
+Subject: [PATCH] Add Solokeys
+
+---
+ hid_transport.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/u2flib_host/hid_transport.py b/u2flib_host/hid_transport.py
+index 88a33e0..2b82747 100644
+--- a/u2flib_host/hid_transport.py
++++ b/u2flib_host/hid_transport.py
+@@ -62,7 +62,7 @@ DEVICES = [
+     (0x20a0, 0x42b1),  # Nitrokey FIDO2
+     (0x20a0, 0x42b2),  # Nitrokey FIDO2 NFC (future model)
+     (0x20a0, 0x42b3),  # Safetech SafeKey
+-
++    (0x0483, 0xa2ca),  # SoloKeys U2F/FIDO2
+ ]
+ HID_RPT_SIZE = 64
+ 
+-- 
+2.21.3
+

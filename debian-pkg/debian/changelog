@@ -1,3 +1,10 @@
+python-u2flib-host (3.0.3-7) unstable; urgency=medium
+
+  [ o ]
+  * add patch for solokeys
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Sat, 07 Nov 2020 21:51:33 +0100
+
 python-u2flib-host (3.0.3-6) unstable; urgency=medium
 
   [ Frédéric Pierret (fepitre) ]

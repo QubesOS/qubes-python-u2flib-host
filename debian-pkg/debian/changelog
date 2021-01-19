@@ -1,3 +1,13 @@
+python-u2flib-host (3.0.3-8) unstable; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * Add .gitlab-ci.yml
+
+  [ Marek Marczykowski-Górecki ]
+  * debian: update packaging, enable bullseye
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Tue, 19 Jan 2021 02:43:48 +0100
+
 python-u2flib-host (3.0.3-7) unstable; urgency=medium
 
   [ o ]

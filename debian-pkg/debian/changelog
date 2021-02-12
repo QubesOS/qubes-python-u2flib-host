@@ -1,3 +1,10 @@
+python-u2flib-host (3.0.3-9) unstable; urgency=medium
+
+  [ its me ]
+  * include solokey patch in fedora builds
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Fri, 12 Feb 2021 03:20:51 +0100
+
 python-u2flib-host (3.0.3-8) unstable; urgency=medium
 
   [ Frédéric Pierret (fepitre) ]

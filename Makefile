@@ -1,4 +1,4 @@
-VERSION := $(shell cat version)
+VERSION := $(file <version)
 URL := https://files.pythonhosted.org/packages/source/p/python-u2flib-host/python-u2flib-host-$(VERSION).tar.gz
 
 SRC_FILE = $(notdir $(URL))
@@ -12,7 +12,7 @@ endif
 SHELL := /bin/bash
 %: %.sha256
 	@$(FETCH_CMD) $@$(UNTRUSTED_SUFF) $(URL)
-	@sha256sum --status -c <(printf "$$(cat $<)  -\n") <$@$(UNTRUSTED_SUFF) || \
+	@sha256sum --strict --status -c <(printf "$(file <$<)  -\n") <$@$(UNTRUSTED_SUFF) || \
 		{ echo "Wrong SHA256 checksum on $@$(UNTRUSTED_SUFF)!"; exit 1; }
 	@mv $@$(UNTRUSTED_SUFF) $@
 

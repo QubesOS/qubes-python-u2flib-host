@@ -2,7 +2,7 @@ DEBIAN_BUILD_DIRS.vm-stretch := debian-pkg/debian
 DEBIAN_BUILD_DIRS.vm-buster := debian-pkg/debian
 DEBIAN_BUILD_DIRS.vm-bullseye := debian-pkg/debian
 DEBIAN_BUILD_DIRS := $(DEBIAN_BUILD_DIRS.$(PACKAGE_SET)-$(DIST))
-ifneq ($(DISTRIBUTION),centos)
+ifeq ($(filter $(DIST), centos7 centos8 centos-stream8),)
 RPM_SPEC_FILES := python3-u2flib-host.spec
 endif
 

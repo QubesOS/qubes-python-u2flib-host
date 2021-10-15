@@ -64,7 +64,7 @@ rm -rf %{pypi_name}.egg-info
 %{_bindir}/u2f-authenticate
 %{_bindir}/u2f-register
 %{python3_sitelib}/u2flib_host
-%{python3_sitelib}/python_u2flib_host-%{version}-py?.?.egg-info
+%{python3_sitelib}/python_u2flib_host-%{version}-py?.[0-9]*.egg-info
 
 %changelog
 * Mon Sep 10 2018 Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com> - 3.0.3-1

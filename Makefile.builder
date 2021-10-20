@@ -12,7 +12,7 @@ ifneq ($(filter $(DISTRIBUTION), debian qubuntu),)
 SOURCE_COPY_IN := source-debian-copy-in
 endif
 
-source-debian-copy-in: VERSION = $(shell cat $(ORIG_SRC)/version)
+source-debian-copy-in: VERSION = $(file <$(ORIG_SRC)/version)
 source-debian-copy-in: ORIG_FILE = $(CHROOT_DIR)/$(DIST_SRC)/python-u2flib-host_$(VERSION).orig.tar.gz
 source-debian-copy-in: SRC_FILE  = $(ORIG_SRC)/python-u2flib-host-$(VERSION).tar.gz
 source-debian-copy-in:

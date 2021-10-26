@@ -1,3 +1,18 @@
+python-u2flib-host (3.0.3-10) unstable; urgency=medium
+
+  [ Demi Marie Obenour ]
+  * Switch from wget to curl
+  * Clean up makefile a little
+
+  [ Frédéric Pierret (fepitre) ]
+  * spec: exclude unsupported CentOS
+  * spec: allow matching python3.10 in %files
+
+  [ Demi Marie Obenour ]
+  * Use $(file <) instead of $(shell cat)
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Tue, 26 Oct 2021 02:53:37 +0200
+
 python-u2flib-host (3.0.3-9) unstable; urgency=medium
 
   [ its me ]

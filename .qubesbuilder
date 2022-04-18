@@ -1,0 +1,26 @@
+host:
+  rpm:
+    spec:
+    - python3-u2flib-host.spec
+vm:
+  rpm:
+    spec:
+    - python3-u2flib-host.spec
+vm-buster:
+  deb:
+    build:
+    - debian-pkg/debian
+    source:
+      commands:
+      - '@PLUGINS_DIR@/source_deb/scripts/debian-quilt @SOURCE_DIR@/debian-series.conf @BUILD_DIR@/debian/patches'
+vm-bullseye:
+  deb:
+    build:
+    - debian-pkg/debian
+    source:
+      commands:
+      - '@PLUGINS_DIR@/source_deb/scripts/debian-quilt @SOURCE_DIR@/debian-series.conf @BUILD_DIR@/debian/patches'
+source:
+  files:
+  - url: https://files.pythonhosted.org/packages/source/p/python-u2flib-host/python-u2flib-host-3.0.3.tar.gz
+    sha256: python-u2flib-host-3.0.3.tar.gz.sha256

@@ -1,10 +1,10 @@
 host:
   rpm:
-    spec:
+    build:
     - python3-u2flib-host.spec
 vm:
   rpm:
-    spec:
+    build:
     - python3-u2flib-host.spec
 vm-buster:
   deb:

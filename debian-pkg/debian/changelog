@@ -1,3 +1,21 @@
+python-u2flib-host (3.0.3-12) unstable; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * Add Qubes Builder v2 integration
+  * .qubesbuilder: replace 'spec' by 'build'
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Wed, 12 Oct 2022 01:05:06 +0200
+
+python-u2flib-host (3.0.3-11) unstable; urgency=medium
+
+  [ Frédéric Pierret (fepitre) ]
+  * Drop Travis CI
+
+  [ Marek Marczykowski-Górecki ]
+  * Build for bookworm too
+
+ -- Marek Marczykowski-Górecki <marmarek@invisiblethingslab.com>  Thu, 21 Apr 2022 03:10:36 +0200
+
 python-u2flib-host (3.0.3-10) unstable; urgency=medium
 
   [ Demi Marie Obenour ]
